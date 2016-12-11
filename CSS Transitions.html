@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Style.css">
+</head>
+  <body data-gr-c-s-loaded="true">
+    <h1> Emanuel Figueroa - BYU-I "CIT-261"</h1>
+	<h2>"CIT 261 - CSS Trasition"</h2>
+	<h3> *****Contact me if you have any question about how this works*****</h3>
+    <div class="box"></div>
+    
+<hr>
+	<h2>CIT 261 - JSON Object Creation</h2>
+
+<p id="Test"></p>
+
+<script>
+var text = '{"name":"Emanuel Figueroa","street":"Retorno Tenayuca 34-B","city":"CDMX","country":"Mexico","phone":"+52-55-1952-9576"}';
+
+var obj = JSON.parse(text);
+
+document.getElementById("Test").innerHTML =
+obj.name + "<br>" +
+obj.street + "<br>" +
+obj.city + "<br>" + 
+obj.country + "<br>" +
+obj.phone;
+</script>
+
+<hr>
+	<h2>"CIT 261 - CSS Animation, refresh the screen"</h2>
+        <div id="block"></div>
+		<div id="circle"></div>
+	
+<hr>
+	<h2>"CIT 261 - JavaScript"</h2>
+<div id="output">You want a sunburst highcut acoustic 6 string steelguitar, with a 48 inches pearl in-lay mahogany fingerboard.</div>
+		
+		<script>
+			var guitar = new Object();
+			guitar.type = "acoustic";
+			guitar.color = "sunburst";
+			guitar.stringNum = "6";
+			guitar.stringtype = "steel";
+			guitar.fingerboard = "pearl in-lay mahogany";
+			guitar.fingerboardLength = "48 inches"
+			guitar.bodystyle = "highcut";
+			var textOut = "You want a " + guitar.color + " " + guitar.bodystyle + " " + guitar.type + " " + guitar.stringNum + " string " + 
+			guitar.stringtype + "guitar, with a " + guitar.fingerboardLength + " " + guitar.fingerboard + " fingerboard.";		 
+			document.getElementById("output").innerHTML = textOut;
+			
+		</script>
+    
+<hr>	
+		<h2>CIT 261 - DOM</h2>
+		<h4 id="myHeader" onclick="getValue()">Click here!</h4>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+                    function getValue()
+                      {
+                      var x=document.getElementById("myHeader");
+                      alert(x.innerHTML);
+                      }
+        </script>
+
+<hr>
+		<h2>CIT 261 - Local storage</h2>
+		 Enter Text to Save:<input type="text" id="userInput">
+        <button onclick="saveData()">Save</button>
+        <div id="firstDisplay"></div>
+        <button onclick="getData()">Retrieve</button>
+        <div id="secondDisplay"></div>
+        <script>
+            function saveData() {
+               var userInput = document.getElementById('userInput').value;               
+               if (typeof(Storage) != "undefined") {
+                // store user defined text
+                    localStorage.setItem("userText", userInput);
+                    output = "Success!";
+                } else {
+                    output ="Error! Try again.";                    
+                }
+               document.getElementById("firstDisplay").innerHTML = output;     
+            }
+            function getData(){
+                // retrieve user defined text
+                document.getElementById("secondDisplay").innerHTML = localStorage.getItem("userText");
+                
+            }
+        </script>
+		
+</body>
+
+
+</html>
